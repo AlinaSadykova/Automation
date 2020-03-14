@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200313 10:27:50.512" rpa="false">
-<suite id="s1" name="Amazon Login" source="C:\Users\Alina\Desktop\robot\amazon_login.robot">
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200313 15:33:38.948" rpa="false">
+<suite id="s1" name="Amazon Login" source="C:\Users\Alina\Desktop\Automation\AutomatingAmazonWithRobot\amazon_login.robot">
 <test id="s1-t1" name="Add Product To Cart">
 <kw name="Create List" library="BuiltIn">
 <doc>Returns a list containing given items.</doc>
@@ -22,7 +22,7 @@
 <arg>Shampoo</arg>
 <arg>TV</arg>
 <arg>Piano</arg>
-<arg>Table</arg>
+<arg>alarm</arg>
 <arg>Fork</arg>
 <arg>notepad</arg>
 <arg>humster</arg>
@@ -36,7 +36,6 @@
 <arg>Yamaha</arg>
 <arg>Monster</arg>
 <arg>Gift</arg>
-<arg>CD</arg>
 <arg>Holder</arg>
 <arg>Cup</arg>
 <arg>Book</arg>
@@ -58,15 +57,15 @@
 <assign>
 <var>${products}</var>
 </assign>
-<msg timestamp="20200313 10:27:51.458" level="INFO">${products} = ['Apple', 'Ball', 'Coffee', 'Tie', 'Umbrella', 'Cat', 'Dog', 'Toys', 'T-shirt', 'Diapers', 'Colgate', 'Kitchen', 'Toilet', 'Lipstick', 'Shampoo', 'TV', 'Piano', 'Table', 'Fork', 'notepad', 'humster', ...</msg>
-<status status="PASS" starttime="20200313 10:27:51.458" endtime="20200313 10:27:51.458"></status>
+<msg timestamp="20200313 15:33:40.100" level="INFO">${products} = ['Apple', 'Ball', 'Coffee', 'Tie', 'Umbrella', 'Cat', 'Dog', 'Toys', 'T-shirt', 'Diapers', 'Colgate', 'Kitchen', 'Toilet', 'Lipstick', 'Shampoo', 'TV', 'Piano', 'alarm', 'Fork', 'notepad', 'humster', ...</msg>
+<status status="PASS" starttime="20200313 15:33:40.100" endtime="20200313 15:33:40.100"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
 <arguments>
 <arg>${products}</arg>
 </arguments>
-<status status="PASS" starttime="20200313 10:27:51.459" endtime="20200313 10:27:51.459"></status>
+<status status="PASS" starttime="20200313 15:33:40.101" endtime="20200313 15:33:40.101"></status>
 </kw>
 <kw name="Open Amazon In Browser" library="Keywords">
 <doc>*Open Amazon In Browser*</doc>
@@ -104,10 +103,10 @@
 <arguments>
 <arg>${url}</arg>
 </arguments>
-<status status="PASS" starttime="20200313 10:27:51.465" endtime="20200313 10:27:51.466"></status>
+<status status="PASS" starttime="20200313 15:33:40.108" endtime="20200313 15:33:40.108"></status>
 </kw>
-<msg timestamp="20200313 10:27:51.466" level="INFO">${url} = https://amazon.com</msg>
-<status status="PASS" starttime="20200313 10:27:51.459" endtime="20200313 10:27:51.466"></status>
+<msg timestamp="20200313 15:33:40.108" level="INFO">${url} = https://amazon.com</msg>
+<status status="PASS" starttime="20200313 15:33:40.102" endtime="20200313 15:33:40.108"></status>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -115,14 +114,14 @@
 <arg>url=${url}</arg>
 <arg>browser=${browser}</arg>
 </arguments>
-<msg timestamp="20200313 10:27:51.466" level="INFO">Opening browser 'gc' to base url 'https://amazon.com'.</msg>
-<status status="PASS" starttime="20200313 10:27:51.466" endtime="20200313 10:27:59.002"></status>
+<msg timestamp="20200313 15:33:40.109" level="INFO">Opening browser 'gc' to base url 'https://amazon.com'.</msg>
+<status status="PASS" starttime="20200313 15:33:40.108" endtime="20200313 15:33:47.140"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200313 10:27:59.002" endtime="20200313 10:28:03.233"></status>
+<status status="PASS" starttime="20200313 15:33:47.140" endtime="20200313 15:33:51.310"></status>
 </kw>
-<status status="PASS" starttime="20200313 10:27:51.459" endtime="20200313 10:28:03.233"></status>
+<status status="PASS" starttime="20200313 15:33:40.102" endtime="20200313 15:33:51.310"></status>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
@@ -133,8 +132,8 @@
 <assign>
 <var>${word}</var>
 </assign>
-<msg timestamp="20200313 10:28:03.234" level="INFO">${word} = flower</msg>
-<status status="PASS" starttime="20200313 10:28:03.233" endtime="20200313 10:28:03.234"></status>
+<msg timestamp="20200313 15:33:51.311" level="INFO">${word} = Jewerly</msg>
+<status status="PASS" starttime="20200313 15:33:51.310" endtime="20200313 15:33:51.311"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -142,66 +141,74 @@
 <arg>id=twotabsearchtextbox</arg>
 <arg>${word}</arg>
 </arguments>
-<msg timestamp="20200313 10:28:03.234" level="INFO">Typing text 'flower' into text field 'id=twotabsearchtextbox'.</msg>
-<status status="PASS" starttime="20200313 10:28:03.234" endtime="20200313 10:28:03.457"></status>
+<msg timestamp="20200313 15:33:51.311" level="INFO">Typing text 'Jewerly' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20200313 15:33:51.311" endtime="20200313 15:33:51.508"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>css:.nav-search-submit</arg>
 </arguments>
-<msg timestamp="20200313 10:28:03.457" level="INFO">Clicking element 'css:.nav-search-submit'.</msg>
-<status status="PASS" starttime="20200313 10:28:03.457" endtime="20200313 10:28:06.539"></status>
+<msg timestamp="20200313 15:33:51.509" level="INFO">Clicking element 'css:.nav-search-submit'.</msg>
+<status status="PASS" starttime="20200313 15:33:51.508" endtime="20200313 15:33:53.627"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>css:.a-text-normal</arg>
 </arguments>
-<msg timestamp="20200313 10:28:06.540" level="INFO">Clicking element 'css:.a-text-normal'.</msg>
-<status status="PASS" starttime="20200313 10:28:06.540" endtime="20200313 10:28:06.699"></status>
+<msg timestamp="20200313 15:33:53.628" level="INFO">Clicking element 'css:.a-text-normal'.</msg>
+<status status="PASS" starttime="20200313 15:33:53.628" endtime="20200313 15:33:53.784"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>//*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/h2/a</arg>
+<arg>xpath=//a[contains(@target,'_top') and contains(@data-click-index, '0') and contains(@class, 'sb_1')]</arg>
 </arguments>
-<msg timestamp="20200313 10:28:06.700" level="INFO">Clicking element '//*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]/div[1]/div/span/div/div/div/div/div[2]/h2/a'.</msg>
-<status status="PASS" starttime="20200313 10:28:06.700" endtime="20200313 10:28:10.108"></status>
+<msg timestamp="20200313 15:33:53.821" level="INFO">Element 'xpath=//a[contains(@target,'_top') and contains(@data-click-index, '0') and contains(@class, 'sb_1')]' is displayed.</msg>
+<status status="PASS" starttime="20200313 15:33:53.785" endtime="20200313 15:33:53.822"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>id=add-to-cart-button</arg>
+<arg>xpath=//a[contains(@target,'_top') and contains(@data-click-index, '1') and contains(@class, 'sb_1')]</arg>
 </arguments>
-<msg timestamp="20200313 10:28:10.109" level="INFO">Clicking element 'id=add-to-cart-button'.</msg>
-<status status="PASS" starttime="20200313 10:28:10.108" endtime="20200313 10:28:11.373"></status>
+<msg timestamp="20200313 15:33:53.849" level="INFO">Element 'xpath=//a[contains(@target,'_top') and contains(@data-click-index, '1') and contains(@class, 'sb_1')]' is displayed.</msg>
+<status status="PASS" starttime="20200313 15:33:53.822" endtime="20200313 15:33:53.849"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>id=hlb-view-cart-announce</arg>
+<arg>xpath=//a[contains(@target,'_top') and contains(@data-click-index, '2') and contains(@class, 'sb_1')]</arg>
 </arguments>
-<msg timestamp="20200313 10:28:11.374" level="INFO">Clicking element 'id=hlb-view-cart-announce'.</msg>
-<status status="PASS" starttime="20200313 10:28:11.373" endtime="20200313 10:28:12.606"></status>
+<msg timestamp="20200313 15:33:53.872" level="INFO">Element 'xpath=//a[contains(@target,'_top') and contains(@data-click-index, '2') and contains(@class, 'sb_1')]' is displayed.</msg>
+<status status="PASS" starttime="20200313 15:33:53.850" endtime="20200313 15:33:53.872"></status>
 </kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>span.a-size-medium.sc-product-title</arg>
-<arg>${word}</arg>
+<arg>xpath=//span[contains(@class,'sb_3') and contains(@data-click-el,'title') and contains(@style,'-webkit-line-clamp: 2')]</arg>
 </arguments>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200313 10:28:13.072" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200313 10:28:12.627" endtime="20200313 10:28:13.072"></status>
+<msg timestamp="20200313 15:33:54.280" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200313 15:33:53.886" endtime="20200313 15:33:54.280"></status>
 </kw>
-<msg timestamp="20200313 10:28:13.082" level="FAIL">Element with locator 'span.a-size-medium.sc-product-title' not found.</msg>
-<status status="FAIL" starttime="20200313 10:28:12.607" endtime="20200313 10:28:13.082"></status>
+<msg timestamp="20200313 15:33:54.282" level="FAIL">Element with locator 'xpath=//span[contains(@class,'sb_3') and contains(@data-click-el,'title') and contains(@style,'-webkit-line-clamp: 2')]' not found.</msg>
+<status status="FAIL" starttime="20200313 15:33:53.873" endtime="20200313 15:33:54.282"></status>
 </kw>
-<status status="FAIL" starttime="20200313 10:27:51.457" endtime="20200313 10:28:13.083" critical="yes">Element with locator 'span.a-size-medium.sc-product-title' not found.</status>
+<doc>*Add Product To Cart*
+
+*Steps:*
+
+1. Search for any random product.
+
+2. Select the first product from the Sponsored Addnoptions.
+
+3.</doc>
+<status status="FAIL" starttime="20200313 15:33:40.099" endtime="20200313 15:33:54.282" critical="yes">Element with locator 'xpath=//span[contains(@class,'sb_3') and contains(@data-click-el,'title') and contains(@style,'-webkit-line-clamp: 2')]' not found.</status>
 </test>
-<status status="FAIL" starttime="20200313 10:27:50.515" endtime="20200313 10:28:13.088"></status>
+<status status="FAIL" starttime="20200313 15:33:38.954" endtime="20200313 15:33:54.285"></status>
 </suite>
 <statistics>
 <total>
@@ -215,5 +222,6 @@
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20200313 15:33:38.942" level="ERROR">Error in file 'C:\Users\Alina\Desktop\Automation\AutomatingAmazonWithRobot\amazon_login.robot': Invalid syntax in test case 'Add Product To Cart': Non-existing setting 'text()[contains(., '${xpathFullName}')]'.</msg>
 </errors>
 </robot>
