@@ -13,7 +13,7 @@ Search For Product And Add To Cart
     ...
     ...    3. Chose product from results.
     ...   
-    ...    4. Verify'Add To Cart' button is visible.
+    ...    4. Verify 'Add To Cart' button is visible.
     ...    
     ...    5. Add item to the cart.
     ...    
@@ -29,9 +29,9 @@ Search For Product And Add To Cart
     Set Test Variable    ${products} 
     Open Amazon In Browser
     ${word}    Evaluate    random.choice(${products})    random
-    Input Text    id=twotabsearchtextbox    ${word} 
+    Input Text    ${SearchBar}    ${word} 
     Click Element    css:.nav-search-submit  
-    Click Element    css:.a-text-normal
+    Click Element    ${SearchButton}
     Click Element    xpath=//a[contains(@target,'_top') and contains(@data-click-index, '0') and contains(@class, 'sb_1')]
     Sleep    10 sec
     Click Element    xpath=//*[@id="add-to-cart-button"]

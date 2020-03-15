@@ -27,6 +27,11 @@ Open Amazon In Browser
     SeleniumLibrary.Open Browser  url=${url}    browser=${browser}
     Maximize Browser Window
 
+Search For Product
+    [Arguments]    ${productName}    ${clickFind}=${True}
+
+    
+
 Start Test Setup
     [Documentation]    *Start Test Setup*
     ...

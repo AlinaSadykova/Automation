@@ -4,3 +4,4 @@ Library           SeleniumLibrary
 Library           FakerLibrary    locale=en_US
 Resource         ./Keywords.robot
 Resource         ./CommonVariables.robot
+Resource         ./Buttons.robot

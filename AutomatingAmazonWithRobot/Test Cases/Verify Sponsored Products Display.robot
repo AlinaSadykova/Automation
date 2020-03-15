@@ -25,8 +25,8 @@ Verify Sponsored Products Display
     Set Test Variable    ${products} 
     Open Amazon In Browser
     ${word}    Evaluate    random.choice(${products})    random
-    Input Text    id=twotabsearchtextbox    ${word} 
-    Click Element    css:.nav-search-submit  
+    Input Text    ${SearchBar}    ${word} 
+    Click Element    ${SearchButton}  
     Click Element    css:.a-text-normal
     Element Should Be Visible    xpath=//a[contains(@target,'_top') and contains(@data-click-index, '0') and contains(@class, 'sb_1')]    
     Element Should Be Visible    xpath=//a[contains(@target,'_top') and contains(@data-click-index, '1') and contains(@class, 'sb_1')]
